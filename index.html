@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Linux Essentials</title>
+
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="The Curriculum Vitae of Joe Bloggs."/>
+<meta charset="UTF-8"> 
+
+<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<style>
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
+    border:0;
+    font:inherit;
+    font-size:100%;
+    margin:0;
+    padding:0;
+    vertical-align:baseline;
+    }
+    
+    article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display:block;
+    }
+    
+    html, body {background: #181818; font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #222;}
+    
+    .clear {clear: both;}
+    
+    p {
+        font-size: 1em;
+        line-height: 1.4em;
+        margin-bottom: 20px;
+        color: #444;
+    }
+    
+    #cv {
+        width: 90%;
+        max-width: 800px;
+        background: #f3f3f3;
+        margin: 30px auto;
+    }
+    
+    .mainDetails {
+        padding: 25px 35px;
+        border-bottom: 2px solid #cf8a05;
+        background: #ededed;
+    }
+    
+    #name h1 {
+        font-size: 2.5em;
+        font-weight: 700;
+        font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+        margin-bottom: -6px;
+    }
+    
+    #name h2 {
+        font-size: 2em;
+        margin-left: 2px;
+        font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+    }
+    
+    #mainArea {
+        padding: 0 40px;
+    }
+    
+    #headshot {
+        width: 12.5%;
+        float: left;
+        margin-right: 30px;
+    }
+    
+    #headshot img {
+        width: 100%;
+        height: auto;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+    }
+    
+    #name {
+        float: left;
+    }
+    
+    #contactDetails {
+        float: right;
+    }
+    
+    #contactDetails ul {
+        list-style-type: none;
+        font-size: 0.9em;
+        margin-top: 2px;
+    }
+    
+    #contactDetails ul li {
+        margin-bottom: 3px;
+        color: #444;
+    }
+    
+    #contactDetails ul li a, a[href^=tel] {
+        color: #444; 
+        text-decoration: none;
+        -webkit-transition: all .3s ease-in;
+        -moz-transition: all .3s ease-in;
+        -o-transition: all .3s ease-in;
+        -ms-transition: all .3s ease-in;
+        transition: all .3s ease-in;
+    }
+    
+    #contactDetails ul li a:hover { 
+        color: #cf8a05;
+    }
+    
+    
+    section {
+        border-top: 1px solid #dedede;
+        padding: 20px 0 0;
+    }
+    
+    section:first-child {
+        border-top: 0;
+    }
+    
+    section:last-child {
+        padding: 20px 0 10px;
+    }
+    
+    .sectionTitle {
+        float: left;
+        width: 25%;
+    }
+    
+    .sectionContent {
+        float: right;
+        width: 72.5%;
+    }
+    
+    .sectionTitle h1 {
+        font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+        font-style: italic;
+        font-size: 1.5em;
+        color: #cf8a05;
+    }
+    
+    .sectionContent h2 {
+        font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+        font-size: 1.5em;
+        margin-bottom: -2px;
+    }
+    
+    .subDetails {
+        font-size: 0.8em;
+        font-style: italic;
+        margin-bottom: 3px;
+    }
+    
+    .keySkills {
+        list-style-type: none;
+        -moz-column-count:3;
+        -webkit-column-count:3;
+        column-count:3;
+        margin-bottom: 20px;
+        font-size: 1em;
+        color: #444;
+    }
+    
+    .keySkills ul li {
+        margin-bottom: 3px;
+    }
+    
+    @media all and (min-width: 602px) and (max-width: 800px) {
+        #headshot {
+            display: none;
+        }
+        
+        .keySkills {
+        -moz-column-count:2;
+        -webkit-column-count:2;
+        column-count:2;
+        }
+    }
+    
+    @media all and (max-width: 601px) {
+        #cv {
+            width: 95%;
+            margin: 10px auto;
+            min-width: 280px;
+        }
+        
+        #headshot {
+            display: none;
+        }
+        
+        #name, #contactDetails {
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .sectionTitle, .sectionContent {
+            float: none;
+            width: 100%;
+        }
+        
+        .sectionTitle {
+            margin-left: -2px;
+            font-size: 1.25em;
+        }
+        
+        .keySkills {
+            -moz-column-count:2;
+            -webkit-column-count:2;
+            column-count:2;
+        }
+    }
+    
+    @media all and (max-width: 480px) {
+        .mainDetails {
+            padding: 15px 15px;
+        }
+        
+        section {
+            padding: 15px 0 0;
+        }
+        
+        #mainArea {
+            padding: 0 25px;
+        }
+    
+        
+        .keySkills {
+        -moz-column-count:1;
+        -webkit-column-count:1;
+        column-count:1;
+        }
+        
+        #name h1 {
+            line-height: .8em;
+            margin-bottom: 4px;
+        }
+    }
+    
+    @media print {
+        #cv {
+            width: 100%;
+        }
+    }
+    
+    @-webkit-keyframes reset {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @-webkit-keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        40% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @-moz-keyframes reset {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @-moz-keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        40% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes reset {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        40% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    .instaFade {
+        -webkit-animation-name: reset, fade-in;
+        -webkit-animation-duration: 1.5s;
+        -webkit-animation-timing-function: ease-in;
+        
+        -moz-animation-name: reset, fade-in;
+        -moz-animation-duration: 1.5s;
+        -moz-animation-timing-function: ease-in;
+        
+        animation-name: reset, fade-in;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in;
+    }
+    
+    .quickFade {
+        -webkit-animation-name: reset, fade-in;
+        -webkit-animation-duration: 2.5s;
+        -webkit-animation-timing-function: ease-in;
+        
+        -moz-animation-name: reset, fade-in;
+        -moz-animation-duration: 2.5s;
+        -moz-animation-timing-function: ease-in;
+        
+        animation-name: reset, fade-in;
+        animation-duration: 2.5s;
+        animation-timing-function: ease-in;
+    }
+     
+    .delayOne {
+        -webkit-animation-delay: 0, .5s;
+        -moz-animation-delay: 0, .5s;
+        animation-delay: 0, .5s;
+    }
+    
+    .delayTwo {
+        -webkit-animation-delay: 0, 1s;
+        -moz-animation-delay: 0, 1s;
+        animation-delay: 0, 1s;
+    }
+    
+    .delayThree {
+        -webkit-animation-delay: 0, 1.5s;
+        -moz-animation-delay: 0, 1.5s;
+        animation-delay: 0, 1.5s;
+    }
+    
+    .delayFour {
+        -webkit-animation-delay: 0, 2s;
+        -moz-animation-delay: 0, 2s;
+        animation-delay: 0, 2s;
+    }
+    
+    .delayFive {
+        -webkit-animation-delay: 0, 2.5s;
+        -moz-animation-delay: 0, 2.5s;
+        animation-delay: 0, 2.5s;
+	}
+	
+
+    .headings
+    {
+        font-size: xx-large;
+    }
+    .mini-headings
+    {
+        font-size: x-large;
+        font-style: oblique;
+        color:darkgoldenrod
+    }
+
+
+
+
+
+
+
+	
+</style>
+
+
+
+
+
+<body id="top">
+
+<div id="cv" class="instaFade">
+	<div class="mainDetails">
+		<div id="headshot" class="quickFade">
+			<img src="data:image/png;base64,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" alt="Alan Smith"/>
+		</div>
+		
+		<div id="name">
+			<h1 class="quickFade delayTwo">Linux Essentials</h1>
+			<!-- <h2 class="quickFade delayThree">DevOps</h2> -->
+		</div>
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+                <li>What is Linix ?</li>
+                <li>Linux vs Unix</li>
+                <li>Linux File Systems</li>
+                <li>Understand the Linux booting process</li>
+                <li>Linux Basics Command Cheatsheet</li>
+                <li>Linux Security</li>
+                <li>Linux Processes</li>
+                <li>Linux Networking</li>
+                <li>Linux VI editor</li>
+
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+
+
+
+
+
+	    <div id="mainArea" class="quickFade delayFive">
+
+            <p>
+                <center>
+                    <h1 class="headings">
+                        What is LINUX ?
+                    </h1>
+                </center> <br>
+                Linux is a multi user, multi-tasking and open source operating system. Linux acts as an interface between the application software and hardware. You can find Linux operating system mostly in servers, and also in many areas such as smartphones, cars, home appliances etc.
+                <br><br>The Linux OS was developed by Linus Torvalds in 1991, which sprouted as an idea to improve the UNIX OS. He suggested improvements but was rejected by UNIX designers. Therefore, he thought of launching an OS, designed in a way that could be modified by its users.
+                <br>
+                <p class="mini-headings">Structure Of Linux Operating System</p>
+             <center>
+                    <img src="assets/Linux/1.png">
+                </center><br><br>
+                <div style="color: darkblue;">Kernel</div>
+                Linux kernel is the core part of the operating system. It establishes communication between devices and software. Moreover, it manages system resources. It has four responsibilities:
+                <li>Device Management</li>
+                A system has many devices connected to it like CPU, a memory device, sound cards, graphic cards, etc. A kernel stores all the data related to all the devices in the device driver (without this kernel won't be able to control the devices). Thus kernel knows what a device can do and how to manipulate it to bring out the best performance. It also manages communication between all the devices. The kernel has certain rules that have to be followed by all the devices.
+                <br><br><li>Memory Management</li>
+                Another function that kernel has to manage is the memory management. The kernel keeps track of used and unused memory and makes sure that processes shouldn't manipulate data of each other using virtual memory addresses.
+                <br><br><li>Process Management</li>
+                In the process management, kernel assigns enough time and gives priorities to processes before handling CPU to other processes. It also deals with security and ownership information.
+                <br><br><li>Handling system calls</li>
+                Handling system calls means a programmer can write a query or ask the kernel to perform a task
+                <br><br>
+                <center>
+                    <img src="assets/Linux/2.png">
+                </center><br><br>
+
+                <div style="color: darkblue;">System Libraries</div>
+                System libraries are special programs that help in accessing the kernel's features. A kernel has to be triggered to perform a task, and this triggering is done by the applications. But applications must know how to place a system call because each kernel has a different set of system calls. Programmers have developed a standard library of procedures to communicate with the kernel. Each operating system supports these standards, and then these are transferred to system calls for that operating system.
+<br><br>
+The most well-known system library for Linux is Glibc (GNU C library).
+<br><br>
+
+<div style="color: darkblue;">System Tools</div>
+Linux OS has a set of utility tools, which are usually simple commands. It is a software which GNU project has written and publish under their open source license so that software is freely available to everyone.
+<br><br>
+With the help of commands, you can access your files, edit and manipulate data in your directories or files, change the location of files, or anything.
+<br><br>
+<div style="color: darkblue;">Development Tools</div>
+With the above three components, your OS is running and working. But to update your system, you have additional tools and libraries. These additional tools and libraries are written by the programmers and are called toolchain. A toolchain is a vital development tool used by the developers to produce a working application.
+<br><br>
+<div style="color: darkblue;">End User Tools</div>
+These end tools make a system unique for a user. End tools are not required for the operating system but are necessary for a user.
+<br><br>
+Some examples of end tools are graphic design tools, office suites, browsers, multimedia players, etc.
+
+        <p class="mini-headings">Why Use Linux ?</p>
+        <center>
+            <img src="assets/Linux/3.png" width=720px>
+        </center><br><br>
+
+        <p class="mini-headings">Choosing Linux distribution</p>
+        <center>
+            <img src="assets/Linux/4.png" width=720px>
+        </center><br>
+                
+            </p> <hr>
+
+            <p>
+                <center>
+                    <h1 class="headings">
+                        Linux vs Unix
+                    </h1>
+                </center> <br>
+                <center>
+                    <img src="assets/Linux/diff1.png" width=720px>
+                </center><center>
+                    <img src="assets/Linux/diff2.png" width=720px>
+                </center><br>
+       
+            </p> <hr>
+
+
+            <p>
+                <center>
+                    <h1 class="headings">
+                        File Systems in Linux
+                    </h1>
+                </center> <br>
+                notes
+                <br>
+                
+                
+
+
+                
+            </p> <hr>
+
+
+            <p>
+                <center>
+                    <h1 class="headings">
+                        Linux booting process
+                    </h1>
+                </center> <br>
+                notes
+                <br>
+                
+                
+
+
+                
+            </p> <hr>
+
+
+            <p>
+                <center>
+                    <h1 class="headings">
+                        Linux Basics Command Cheatsheet
+                    </h1>
+                </center> <br>
+                <center>
+                    <img src="assets/Linux/cal.png" >
+                </center><br>
+                <center>
+                    <img src="assets/Linux/sys.png" >
+                </center><br>   <center>
+                    <img src="assets/Linux/ls.png" >
+                </center><br>   <center>
+                    <img src="assets/Linux/dir.png">
+                </center><br>   <center>
+                    <img src="assets/Linux/cat.png" >
+                </center><br>
+            </center><br>   <center>
+                <img src="assets/Linux/echo.png" >
+            </center><br>
+        </center><br>   <center>
+            <img src="assets/Linux/head.png" >
+        </center><br>
+    </center><br>   <center>
+        <img src="assets/Linux/more.png" >
+    </center><br>
+</center><br>   <center>
+    <img src="assets/Linux/read.png" >
+</center><br>
+</center><br>   <center>
+    <img src="assets/Linux/cut.png" >
+</center><br>
+<center>
+    <img src="assets/Linux/comm.png" >
+</center><br><center>
+    <img src="assets/Linux/cp.png" >
+</center><br>
+<center>
+    <img src="assets/Linux/wc.png" >
+</center><br>
+<center>
+    <img src="assets/Linux/sort.png" >
+</center><br><center>
+    <img src="assets/Linux/tr.png" >
+</center><br>
+</center><br>
+<center>
+    <img src="assets/Linux/uniq.png" >
+</center><br>
+<center>
+    <img src="assets/Linux/od.png" >
+</center><br>
+From Here
+<center>
+    <img src="assets/Linux/find1.png" >
+</center><br><center>
+    <img src="assets/Linux/find2.png" >
+</center><br>
+<center>
+    <img src="assets/Linux/tee.png" >
+</center><br>
+<center>
+    <img src="assets/Linux/gzip.png" >
+</center><br>
+--------------------------------------------------------
+<center>
+    <img src="assets/Linux/grep.png" >
+</center><br>
+<center>
+    <img src="assets/Linux/sed.png" >
+</center><br>
+<center>
+    <img src="assets/Linux/awk.png" >
+</center><br>
+
+
+
+                <br>                
+            </p> <hr>
+
+
+            <p>
+                <center>
+                    <h1 class="headings">
+                        Linux File Security
+                    </h1>
+                </center> <br>
+                Every Linux system have three types of owner:<br>
+               <br>User <br> A user is the one who created the file. By default, whosoever, creates the file becomes the owner of the file. A user can create, delete, or modify the file.
+                <br><br>Group <br> A group can contain multiple users. All the users belonging to a group have same access permission for a file.
+                <br><br>Other <br> Any one who has access to the file other than user and group comes in the category of other. Other has neither created the file nor is a group member.
+<br><br>Users and groups can be locally managed in /etc/psswd or /etc/group<br><br>
+<center>
+    <img src="assets/Linux/us1.png" >
+</center><br>
+<center>
+    <img src="assets/Linux/us2.png" >
+</center><br>
+<center>
+    <img src="assets/Linux/us3.png" >
+</center><br>
+<center>
+    <img src="assets/Linux/us4.png" >
+</center><br>
+<div class="mini-headings">File Permissions</div>
+All the three owners (user owner, group, others) in the Linux system have three types of permissions defined.
+<br><br>
+Read (r)
+<br>The read permission allows you to open and read the content of a file. But you can't do any editing or modification in the file.
+<br><br>Write (w)<br> The write permission allows you to edit, remove or rename a file. For instance, if a file is present in a directory, and write permission is set on the file but not on the directory, then you can edit the content of the file but can't remove, or rename it.
+<br><br>Execute (x)<br> In Unix type system, you can't run or execute a program unless execute permission is set.But in Windows, there is no such permission available.
+<br><br>
+I have a file testFile and a directory testDir.
+<center>
+    <img src="assets/Linux/per1.png" >
+</center><br>
+Here, The first symbol "-" represents that it is a regular file.<br>
+In directory, symbol is "d".<br>
+Now,from remaining nine letters, first triplet represents the permission for user owner. Second triplet represents the permission for group owner. Third triplet represents the permission for other .
+<br><br>
+<center>
+    <img src="assets/Linux/per2.png" >
+</center><br><center>
+    <img src="assets/Linux/per3.png" >
+</center><br>
+<div class="mini-headings">Linked Files</div>
+A link is a connectivity between the filename and the actual data byte in the disk space. More than one filename can link to the same data.
+<br><br>
+There are two types of Links :<br><br>
+<div style="color: darkblue;">Hard Links</div>
+They are the low-level links. It links more than one filename with the same Inode and it represents the physical location of a file
+<br><br>
+I have an empfile and i create a link file using ln command.
+A new file got created of similar size, with a same inode number.
+If i delete the original file, still new file with same inode number will be present.<br>
+</center><br><center>
+    <img src="assets/Linux/links1.png" >
+</center><br><br>
+For a directory, hard links are not allowed.
+<br></center><br><center>
+    <img src="assets/Linux/links3.png" >
+</center><br><br>
+<div style="color: darkblue;">Soft Links(Symbolic Links)</div>
+Soft links are very common. It represents a virtual or abstract location of the file. It is just like the shortcuts created in Windows. A soft link doesn't contain any information or content of the linked file, instead it has a pointer to the location of the linked file. In other words, a new file is created with new Inode, having a pointer to the Inode location of the original file.
+<br><br>
+I have a file and i create a soft link file using ln -s command.
+A new file got created different inode numbers that differ by 1.
+If i delete the original file, new link file becomes invalid.<br>
+</center><br><center>
+    <img src="assets/Linux/links2.png" >
+</center><br>
+                <br>                
+            </p> <hr>
+
+
+            <p>
+                <center>
+                    <h1 class="headings">
+                        Linux Processes
+                    </h1>
+                </center> <br>
+                In an operating system, there are many programs that take place on computer's RAM. These programs may be run by OS itself or a user, such programs are called 'Processes.' 
+                <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <br>
+            </p> <hr>
+
+
+
+
+
+
+
+
+            <p>
+                <center>
+                    <h1 class="headings">
+                        Linux Networking
+                    </h1>
+                </center> <br>
+                Every computer is connected to some other computer through a network whether internally or externally to exchange some information. This network can be small as some computers connected in your home or office, or can be large or complicated as in large University or the entire Internet.
+<br><br>
+Maintaining a system's network is a task of System/Network administrator. Their task includes network configuration and troubleshooting
+                <br><br>Let's look at some networking commands:
+                <br><br>
+                <div style="color: darkblue;"></div>
+                
+                        
+            </p> <hr>
+
+
+            <p>
+                <center>
+                    <h1 class="headings">
+                        VI editor
+                    </h1>
+                </center> <br>
+                notes
+                <br>
+                
+                
+
+
+                
+            </p> <hr>
+
+
+		
+	    </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3753241-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>
